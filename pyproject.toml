@@ -1,0 +1,46 @@
+[build-system]
+requires = [
+    "setuptools>=68.1.2",
+    "setuptools_scm[toml]>=6.2",
+    "cython",
+    "numpy",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["loopstructuralcython"]
+
+[project]
+name = "loopstructuralcython"
+
+maintainers = [{ name = "Lachlan Grose", email = "lachlan.grose@monash.edu" }]
+
+description = "Compiled cython code for speeding up interpolation for loopstructural"
+keywords = ["geology", "interpolation", "loopstructural"]
+readme = "README.md"
+license = { file = "LICENSE" }
+dynamic = ['version']
+requires-python = ">=3.8"
+classifiers = []
+dependencies = []
+
+[project.optional-dependencies]
+optionals = []
+
+build = []
+
+docs = []
+
+tests = []
+
+[project.urls]
+
+
+[tool.setuptools_scm]
+# Make sure setuptools uses version based on the last created tag
+version_scheme = "post-release"
+# Make sure scm doesn't use local scheme version for push to pypi
+# (so there isn't a + in the version)
+local_scheme = "no-local-version"
+write_to = "loopstructuralcython/_version_generated.py"
+write_to_template = '__version__ = "v{version}"'
